@@ -26,7 +26,7 @@ export default class SearchResults extends Component {
 
 onPressItem = (item, index) => {
   this.props.navigator.push({
-		  title: "Details",
+		  title: `${item.title} Details`,
 		  component: PropertyDetails,
 		  passProps: {property: item}
 	});
