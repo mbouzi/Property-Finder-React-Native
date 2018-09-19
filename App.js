@@ -1,15 +1,29 @@
 'use strict';
 
 
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {Component} from 'react';
+import { 
+  StyleSheet,
+  NavigatorIOS
+} from 'react-native';
 
-export default class App extends React.Component {
+import SearchPage from './SearchPage';
+
+
+export default class App extends Component {
   render() {
-    return React.createElement(Text, {style: styles.description}, "Search for houses to buy!");
+    return (
+      <NavigatorIOS
+        style={styles.container}
+        initialRoute={{
+          title: 'Property Finder',
+          component: SearchPage,
+        }}/>
+    );
   }
-  
 }
+
+
 
 const styles = StyleSheet.create({
   description: {
@@ -18,4 +32,7 @@ const styles = StyleSheet.create({
     color: '#656565',
     marginTop: 65,
   },
+  container: {
+  flex: 1,
+},
 });
